@@ -1,0 +1,25 @@
+name: Python CI Demo
+
+on:
+  push:
+
+jobs:
+  run-python:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Display Python Version
+        run: python --version
+
+      - name: Run Python Program
+        run: python hello.py
